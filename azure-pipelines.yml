@@ -3,6 +3,7 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
+#SAI_COMMENT: Trigger is used to automaticaly run the pipeline when YAML file is edited and the changes are saved
 trigger:
 - master
 #SAI_COMMENT: vmImage asks for the Virtualmachine where the proj should be build. Here it's given latest version of Ubuntu.
