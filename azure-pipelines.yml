@@ -22,3 +22,12 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     #SAI_COMMENT: The goal of the deployment is to create a package.
     goals: 'package'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/.war'
+    TargetFolder: '$(build.artifactstagingdirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'artifact'
+    publishLocation: 'Container'
